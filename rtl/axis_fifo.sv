@@ -69,7 +69,7 @@ module axis_fifo #(
       if (wr_en) begin
         wr_bin  <= wr_bin_next;
         wr_gray <= wr_gray_next;
-        mem[wr_bin[ADDR_WIDTH-1:0]] <= USE_TLAST ? {s_axis_tdata, s_axis_tlast} : s_axis_tdata;
+        mem[wr_bin[ADDR_WIDTH-1:0]] <= USE_TLAST ? {s_axis_tlast, s_axis_tdata} : s_axis_tdata;
       end
     end
   end
